@@ -45,8 +45,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: true, index|
-|image|text|null: true, index|
+|text|text|index|
+|image|text|index|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
