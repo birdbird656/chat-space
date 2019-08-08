@@ -6,10 +6,10 @@
       .left-content__header__box__icon
         %i.fa.fa-edit
         %i.fa.fa-cog
-  .left-content__group
-    .left-content__group__name
+  .left-content__groups
+    .left-content__groups__group__name
       groupname
-    .left-content__group__subtext
+    .left-content__groups__group__subtext
       message
 .right-content
   .right-content__header
@@ -22,25 +22,19 @@
           %li name
     .right-content__header__editbtn
       edit
-  .right-content__chat
-    .right-content__chat__box
-      .right-content__chat__box__userdate
-        .right-content__chat__box__userdate__user
-          user
-        .right-content__chat__box__userdate__date
-          date
-      .right-content__chat__box__message
-        %p message
-    .right-content__form
-      %form{class:"right-content__form__new-message"}
-        .right-content__form__new-message__inputbox
-          %input{class:"right-content__form__new-message__inputbox__text", placeholder:"type a message"}
-          %label{class:"right-content__form__new-message__inputbox__image"}
-            %label.upload-label{for: "upload-icon"}
-              %i.fa.fa-picture-o
-              = file_field :message, :image, id: "upload-icon", class: "right-content__form__new-message__inputbox__image__upload-label__file"
-        %input{class:"right-content__form__new-message__sendbtn", type:"submit", value:"Send"}
-          
+  .message
+    = render @messages
+  .right-content__form
+    = form_for [@group, @message] do |f|
+      .right-content__form__inputbox
+        = f.text_field :content, class: 'inputbox__text', placeholder: 'type a message'
+        = f.label :image, class: 'upload-label' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'right-content__form__inputbox__file'
+      = f.submit 'Send', class: 'right-content__form__sendbtn'
+      
+        
+        
   
       
          
