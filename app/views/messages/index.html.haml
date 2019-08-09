@@ -1,16 +1,4 @@
-.left-content
-  .left-content__header
-    .left-content__header__box
-      .left-content__header__box__name
-        user
-      .left-content__header__box__icon
-        %i.fa.fa-edit
-        %i.fa.fa-cog
-  .left-content__groups
-    .left-content__groups__group__name
-      groupname
-    .left-content__groups__group__subtext
-      message
+= render "devise/shared/side_bar"
 .right-content
   .right-content__header
     .right-content__header__groupmember
@@ -19,11 +7,14 @@
       .right-content__header__groupmember__member
         %ul member :
         .right-content__header__groupmember__member__name
-          %li name
+          %li
+          - @group.members.each do |member|
+            = member.user.name
     .right-content__header__editbtn
       edit
   .message
-    = render @messages
+    .right-content__chat__box
+      = render @messages
   .right-content__form
     = form_for [@group, @message] do |f|
       .right-content__form__inputbox

@@ -20,6 +20,10 @@
       font-weight: bold;
       &__name  {
       font-size: 16px;
+      font: bold;
+      }
+      &__icon {
+        display: flex;
       }
     }
   }
@@ -91,9 +95,10 @@
       background-color: #fafafa;
       overflow: scroll;
         &__userdate {
-          display: flex;
-          margin-bottom: 10px;
-          &__user {
+          padding-bottom: 40px;
+          &__info {
+            display: flex;
+            margin-bottom: 10px;
             font-size: 16px;
             color: #434A54;
             font-weight: bold;
@@ -104,11 +109,13 @@
             color: #999999;
             margin-left: 10px;
           }
+          &__message {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #434A54;
+          }
         }
-        &__message {
-          font-size: 14px;
-          color: #434A54;
-        }
+          
       }
     }
     &__form  {
@@ -158,4 +165,8 @@
   position: absolute;
   top: 10px;
   right:10px;
+}
+
+.icon {
+  color: white;
 }

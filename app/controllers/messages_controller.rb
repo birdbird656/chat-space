@@ -28,4 +28,8 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 
+  def group_params
+    params.require(:group).permit(:name, { :user_ids => [] })
+  end
+
 end
