@@ -5,15 +5,15 @@ $(function() {
     var html = `
     <div class="right-content__chat__box__userdate" data-message-id="${message.id}">
       <div class="right-content__chat__box__userdate__info">
-      ${message.name}
+        ${message.name}
       </div>
         <div class="right-content__chat__box__userdate__date">
-        ${message.time}
+          ${message.time}
         </div>
     </div>
     <div class="right-content__chat__box__message">
       <p class="right-content__chat__box__message__content">
-      ${content}
+        ${content}
       </p>
       ${image}
     </div>
