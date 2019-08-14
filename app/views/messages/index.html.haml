@@ -3,7 +3,7 @@
   .right-content__header
     .right-content__header__groupmember
       .right-content__header__groupmember__group
-        group
+        = @group.name
       .right-content__header__groupmember__member
         %ul member :
         .right-content__header__groupmember__member__name
@@ -11,7 +11,7 @@
           - @group.members.each do |member|
             = member.user.name
     .right-content__header__editbtn
-      edit
+      = link_to 'edit', edit_group_path(@group.id), class: "btn"
   .message
     .right-content__chat__box
       = render @messages
