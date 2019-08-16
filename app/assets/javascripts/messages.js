@@ -24,7 +24,7 @@ $(function() {
   $("#new_message").on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
-    var url = window.location.href
+    var url = $(this).attr("action");
     $.ajax({
       url: url,
       type:"POST",
@@ -42,6 +42,30 @@ $(function() {
     })
     .fail(function(){
       alert('自動更新に失敗しました');
-    })
-  })
-})
+    });
+  });
+  var reloadMessages = function(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      var last_message_id = $('.right-content__chat__box__userdate:last').data("message-id");
+      $.ajax({
+        url: "api/messages",
+        type: "GET",
+        dataType: "json",
+        data: {id: last_message_id},
+      })
+      .done(function(messages) {
+        var insertHTML = '';
+        messages.forEach(function(message) {
+          insertHTML = buildHTML(message)
+          $(".right-content__chat__box").append(insertHTML);
+          $(".right-content__chat__box").animate({scrollTop:$('.right-content__chat__box')[0].scrollHeight}, 'fast');
+        })
+        
+      })
+      .fail(function() {
+        alert("自動更新に失敗しました");
+      })
+    }
+  }
+  setInterval(reloadMessages, 5000);
+});
