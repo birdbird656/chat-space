@@ -10,8 +10,7 @@
           %li
           - @group.members.each do |member|
             = member.user.name
-    .right-content__header__editbtn
-      = link_to 'edit', edit_group_path(@group.id), class: "btn"
+    = link_to 'Edit', edit_group_path(@group.id), class: "right-content__header__editbtn"
   .message
     .right-content__chat__box
       = render @messages
