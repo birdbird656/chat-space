@@ -68,3 +68,4 @@ gem "carrierwave"
 gem "mini_magick"
 gem "jquery-rails"
 gem "pry-rails"
+gem 'fog-aws'

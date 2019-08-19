@@ -18,3 +18,4 @@
 group-materials/
 #Ignore imagefile
 public/uploads/
+config/secrets.yml
