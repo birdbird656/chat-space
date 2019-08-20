@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'up-load-bird'
-  config.asset_host = 'https://s3-ap-northeast-1(※例 ap-northeast-1).amazonaws.com/up-load-bird'
+  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/up-load-bird'
 end
