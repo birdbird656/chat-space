@@ -41,7 +41,7 @@ $(function() {
       $('.right-content__form__sendbtn').prop('disabled', false);
     })
     .fail(function(){
-      alert('自動更新に失敗しました');
+      alert('エラーが発生しました');
     });
   });
   var reloadMessages = function(){
