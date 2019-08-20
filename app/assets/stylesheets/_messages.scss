@@ -99,6 +99,7 @@
       overflow: scroll;
         &__userdate {
           padding-bottom: 40px;
+          display: flex;
           &__info {
             display: flex;
             margin-bottom: 10px;
@@ -112,14 +113,13 @@
             color: #999999;
             margin-left: 10px;
           }
-          &__message {
-            margin-bottom: 10px;
-            font-size: 14px;
-            color: #434A54;
-          }
         }
-          
-      }
+    &__message {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #434A54;
+    }  
+    }
     }
     &__form  {
       background-color: gray;
