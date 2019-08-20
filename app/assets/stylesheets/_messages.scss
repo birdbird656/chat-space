@@ -98,7 +98,7 @@
       background-color: #fafafa;
       overflow: scroll;
         &__userdate {
-          padding-bottom: 40px;
+          padding-bottom: 10px;
           display: flex;
           &__info {
             display: flex;
@@ -115,7 +115,7 @@
           }
         }
     &__message {
-      margin-bottom: 10px;
+      margin-bottom: 40px;
       font-size: 14px;
       color: #434A54;
     }  
